@@ -23,10 +23,14 @@ let package = Package(
         // .package(url: /* package url */, from: "1.0.0"),
     ],
     targets: [
-        .target(name: "DSWaveformImage"),
+        .target(
+            name: "DSWaveformImage",
+            resources: [.process("PrivacyInfo.xcprivacy")]
+        ),
         .target(
             name: "DSWaveformImageViews",
-            dependencies: ["DSWaveformImage"]
+            dependencies: ["DSWaveformImage"],
+            resources: [.process("PrivacyInfo.xcprivacy")]
         ),
     ]
 )
